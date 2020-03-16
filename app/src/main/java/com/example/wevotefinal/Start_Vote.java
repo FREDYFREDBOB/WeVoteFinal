@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -37,6 +38,16 @@ public class Start_Vote extends AppCompatActivity implements NavigationView.OnNa
             drawer.addDrawerListener(toggle);
             toggle.syncState();
         }
+    }
+
+    public void confirm (View view){
+        Intent intentInfo = new Intent(Start_Vote.this, Vote.class);
+        startActivity(intentInfo);
+    }
+
+    public void cancel (View view){
+        Intent intentInfo = new Intent(Start_Vote.this, Home.class);
+        startActivity(intentInfo);
     }
 
     @Override

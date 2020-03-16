@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -39,6 +40,26 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
             navigationView.setCheckedItem(R.id.nav_home);
         }
+    }
+
+    public void viewInfo (View view){
+        Intent intentInfo = new Intent(Home.this, General_Info.class);
+        startActivity(intentInfo);
+    }
+
+    public void viewForums (View view){
+        Intent intentForums = new Intent(Home.this, Forum.class);
+        startActivity(intentForums);
+    }
+
+    public void viewCandidates (View view){
+        Intent intentCandidates = new Intent(Home.this, Show_Candidates.class);
+        startActivity(intentCandidates);
+    }
+
+    public void startVote (View view){
+        Intent intentVote = new Intent(Home.this, Start_Vote.class);
+        startActivity(intentVote);
     }
 
     @Override

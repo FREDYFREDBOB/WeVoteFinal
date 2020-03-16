@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -37,6 +38,11 @@ public class Candidate_3 extends AppCompatActivity implements NavigationView.OnN
             drawer.addDrawerListener(toggle);
             toggle.syncState();
         }
+    }
+
+    public void back (View view){
+        Intent intentInfo = new Intent(Candidate_3.this, Show_Candidates.class);
+        startActivity(intentInfo);
     }
 
     @Override

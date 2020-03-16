@@ -10,6 +10,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -17,10 +20,19 @@ public class Forum extends AppCompatActivity implements NavigationView.OnNavigat
 
     private DrawerLayout drawer;
 
+    private ListView listView;
+    private String[] dummy_users = {"user1", "user2", "user3", "user4", "user5", "user6", "user7", "user8", "user9", "user10"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
+
+        {
+            listView = findViewById(R.id.users);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dummy_users);
+            listView.setAdapter(adapter);
+        }
 
         {
             Toolbar toolbar = findViewById(R.id.toolbar);
@@ -37,6 +49,11 @@ public class Forum extends AppCompatActivity implements NavigationView.OnNavigat
             drawer.addDrawerListener(toggle);
             toggle.syncState();
         }
+    }
+
+    public void back (View view){
+        Intent intentInfo = new Intent(Forum.this, Home.class);
+        startActivity(intentInfo);
     }
 
     @Override

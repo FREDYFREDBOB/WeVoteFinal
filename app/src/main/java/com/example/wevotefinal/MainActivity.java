@@ -9,7 +9,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -39,6 +41,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             navigationView.setCheckedItem(R.id.nav_logout);
         }
+    }
+
+    public void login(View view){
+        Intent intent = new Intent(MainActivity.this, Home.class);
+        startActivity(intent);
     }
 
     @Override

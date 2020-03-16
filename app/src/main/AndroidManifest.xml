@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wevotefinal">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="                   WeVote"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Thank_Vote"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Confirm_Vote"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Start_Vote"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Vote"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Candidate_3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Candidate_2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Candidate_1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Show_Candidates"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".General_Info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Forum"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -10,12 +10,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class Vote extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
+    private int selection = 0;
+    public static final String SELECTION = "SELECTION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,30 @@ public class Vote extends AppCompatActivity implements NavigationView.OnNavigati
                     R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
+        }
+    }
+
+    public void selection1(View view){
+        selection = 1;
+    }
+
+    public void selection2(View view){
+        selection = 2;
+    }
+
+    public void selection3(View view){
+        selection = 3;
+    }
+
+    public void submit(View view){
+        Intent intent = new Intent(Vote.this, Confirm_Vote.class);
+
+        if(selection == 0){
+            Toast.makeText(getApplicationContext(),"Please Select A Candidate",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            intent.putExtra(SELECTION, selection);
+            startActivity(intent);
         }
     }
 

@@ -13,6 +13,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
+import static com.example.wevotefinal.Vote.SELECTION;
+
 public class Confirm_Vote extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
@@ -21,6 +23,11 @@ public class Confirm_Vote extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm__vote);
+
+        Intent intent = getIntent();
+        int selection = intent.getIntExtra(SELECTION, 0 );
+
+
 
         {
             Toolbar toolbar = findViewById(R.id.toolbar);

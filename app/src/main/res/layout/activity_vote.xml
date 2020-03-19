@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#85C1E9"
     android:fitsSystemWindows="true"
-    tools:context=".Vote"
+    tools:context=".Vote">
     tools:openDrawer="start">
 
     <LinearLayout
@@ -27,6 +27,50 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <RadioGroup
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/candidate1"
+                    android:onClick="selection1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:buttonTint="#000000" />
+
+                <RadioButton
+                    android:id="@+id/candidate2"
+                    android:onClick="selection2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:buttonTint="#000000" />
+
+                <RadioButton
+                    android:id="@+id/candidate3"
+                    android:onClick="selection3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:buttonTint="#000000"
+                    android:textAlignment="viewEnd" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="24dp"
+                android:background="#3F51B5"
+                android:text="Submit"
+                android:onClick="submit"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

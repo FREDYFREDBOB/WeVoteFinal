@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:background="#85C1E9"
     android:fitsSystemWindows="true"
-    tools:context=".General_Info"
-    tools:openDrawer="start">
+    tools:context=".General_Info">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +18,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="#011f4b"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
@@ -34,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginBottom="24dp"
-                android:background="#3F51B5"
+                android:background="@drawable/btn_round"
                 android:onClick="back"
                 android:text="Back"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -64,8 +63,9 @@
                 android:layout_height="200dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:background="#FFFFFF"
-                android:text="TextView"
+                android:background="@drawable/text_round"
+                android:padding="5dp"
+                android:text="@string/TRUSU"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -94,8 +94,9 @@
                 android:layout_height="200dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:background="#FFFFFF"
-                android:text="TextView"
+                android:background="@drawable/text_round"
+                android:padding="5dp"
+                android:text="@string/Parties"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

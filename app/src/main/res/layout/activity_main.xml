@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#85C1E9"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".MainActivity">
     tools:openDrawer="start">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="#011f4b"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
@@ -61,12 +61,13 @@
 
             <Button
                 android:id="@+id/login_button"
-                android:layout_width="wrap_content"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:backgroundTint="#3F51B5"
-                android:text="Login"
+                android:background="@drawable/btn_round"
                 android:onClick="login"
+                android:text="Login"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText2" />

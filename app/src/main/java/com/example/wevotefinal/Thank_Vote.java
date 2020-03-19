@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -37,6 +38,11 @@ public class Thank_Vote extends AppCompatActivity implements NavigationView.OnNa
             drawer.addDrawerListener(toggle);
             toggle.syncState();
         }
+    }
+
+    public void home (View view){
+        Intent intentInfo = new Intent(Thank_Vote.this, Home.class);
+        startActivity(intentInfo);
     }
 
     @Override

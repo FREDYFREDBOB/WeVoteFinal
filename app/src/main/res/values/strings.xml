@@ -1,6 +1,35 @@
 <resources>
     <string name="app_name">WeVoteFinal</string>
 
+    <string name="what_are_parties">Greater and more frequent recognition of student
+achievements, such as by implementing awards like
+club/society of the month.
+
+x To increase student feedback in order to provide a
+service more tailored to what students want, through
+drop-in sessions, suggestion boxes, email surveys and
+face-to-face contact.
+
+
+x To increase Postgraduate, International, Mature and
+LGBT student participation and awareness. To do so I will
+improve communications between those student bodies
+and the union. I hope to set up open forums, working
+groups and awareness mechanisms to support them.
+
+    </string>
+
+    <string name="TRUSU">The Thompson Rivers University Students’ Union is a democratic, membership-based organisation. This is the greatest factor in determining the structure of the organisation and how decisions are made. The membership as a whole is the highest decision-making body, and all members have the ability to exercise their decision-making rights with an equal vote at the Union’s Annual General Meeting. Every year, the members also exercise their right to vote in the election of a Board of Directors.
+    </string>
+    <string name="Parties">
+        x EFF
+
+        x ANC
+
+        x PPP
+
+    </string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

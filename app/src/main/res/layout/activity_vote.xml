@@ -19,7 +19,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="#011f4b"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
@@ -29,47 +29,92 @@
             android:layout_height="match_parent">
 
             <RadioGroup
-                android:layout_width="150dp"
+                android:id="@+id/radioGroup"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <RadioButton
                     android:id="@+id/candidate1"
-                    android:onClick="selection1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="150dp"
-                    android:buttonTint="#000000" />
-
-                <RadioButton
-                    android:id="@+id/candidate2"
-                    android:onClick="selection2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="150dp"
-                    android:buttonTint="#000000" />
-
-                <RadioButton
-                    android:id="@+id/candidate3"
-                    android:onClick="selection3"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:buttonTint="#000000"
+                    android:onClick="selection1"
+                    android:text="Sam Hilton" />
+
+                <RadioButton
+                    android:id="@+id/candidate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:buttonTint="#000000"
+                    android:onClick="selection2"
+                    android:text="Amanda Brown" />
+
+                <RadioButton
+                    android:id="@+id/candidate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:buttonTint="#000000"
+                    android:onClick="selection3"
+                    android:text="Hillary Cliff"
                     android:textAlignment="viewEnd" />
             </RadioGroup>
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="0dp"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="24dp"
-                android:background="#3F51B5"
-                android:text="Submit"
+                android:background="@drawable/btn_round"
                 android:onClick="submit"
+                android:text="Submit"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/sam_hilton" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:srcCompat="@drawable/amanda_brown" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                app:srcCompat="@drawable/hillary_cliff" />
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/btn_round"
+                android:text="Cancel"
+                android:onClick="cancel"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

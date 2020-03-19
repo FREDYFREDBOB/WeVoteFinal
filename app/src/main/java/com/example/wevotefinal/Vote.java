@@ -55,6 +55,11 @@ public class Vote extends AppCompatActivity implements NavigationView.OnNavigati
         selection = 3;
     }
 
+    public void cancel (View view){
+        Intent intentInfo = new Intent(Vote.this, Home.class);
+        startActivity(intentInfo);
+    }
+
     public void submit(View view){
         Intent intent = new Intent(Vote.this, Confirm_Vote.class);
 

@@ -10,6 +10,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,6 +20,10 @@ import static com.example.wevotefinal.Vote.SELECTION;
 public class Confirm_Vote extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
+    public static String CANDIDATE;
+    private int selection;
+    private ImageView candidateImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +31,20 @@ public class Confirm_Vote extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_confirm__vote);
 
         Intent intent = getIntent();
-        int selection = intent.getIntExtra(SELECTION, 0 );
+        selection = intent.getIntExtra(SELECTION, 0 );
+        candidateImage = findViewById(R.id.candidateImage);
 
-
+        switch (selection){
+            case 1:
+                candidateImage.setImageResource(R.drawable.sam_hilton);
+                break;
+            case 2:
+                candidateImage.setImageResource(R.drawable.amanda_brown);
+                break;
+            case 3:
+                candidateImage.setImageResource(R.drawable.hillary_cliff);
+                break;
+        }
 
         {
             Toolbar toolbar = findViewById(R.id.toolbar);
@@ -44,6 +61,17 @@ public class Confirm_Vote extends AppCompatActivity implements NavigationView.On
             drawer.addDrawerListener(toggle);
             toggle.syncState();
         }
+    }
+
+    public void confirm (View view){
+        Intent intentInfo = new Intent(Confirm_Vote.this, Thank_Vote.class);
+        intentInfo.putExtra(CANDIDATE, selection);
+        startActivity(intentInfo);
+    }
+
+    public void cancel (View view){
+        Intent intentInfo = new Intent(Confirm_Vote.this, Vote.class);
+        startActivity(intentInfo);
     }
 
     @Override

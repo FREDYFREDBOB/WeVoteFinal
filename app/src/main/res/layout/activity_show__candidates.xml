@@ -36,10 +36,10 @@
                 android:layout_marginTop="32dp"
                 android:background="#3F51B5"
                 android:onClick="candidate3"
-                android:padding="5"
+                android:padding="5dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                app:srcCompat="@drawable/Hillary_Cliff" />
+                app:srcCompat="@drawable/hillary_cliff" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -65,10 +65,10 @@
                 android:layout_marginTop="32dp"
                 android:background="#3F51B5"
                 android:onClick="candidate2"
-                android:padding="5"
+                android:padding="5dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView1"
-                app:srcCompat="@drawable/Amanda_Brown" />
+                app:srcCompat="@drawable/amanda_brown" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -109,11 +109,11 @@
                 android:layout_marginTop="32dp"
                 android:background="#3F51B5"
                 android:onClick="candidate1"
-                android:padding="5"
+                android:padding="5dp"
                 android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/Sam_Hilton" />
+                app:srcCompat="@drawable/sam_hilton" />
 
             <Button
                 android:id="@+id/back"

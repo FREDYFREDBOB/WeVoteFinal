@@ -9,20 +9,26 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
+    private EditText email_Id, password;
+    public static final String PASSWORD = "password";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        email_Id = findViewById(R.id.email);
+        password = findViewById(R.id.password);
 
         {
             Toolbar toolbar = findViewById(R.id.toolbar);
@@ -44,8 +50,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void login(View view){
-        Intent intent = new Intent(MainActivity.this, Home.class);
-        startActivity(intent);
+        String email = email_Id.getText().toString();
+        String pwd = password.getText().toString();
+
+        if(email.isEmpty()){
+            email_Id.setError("Please Enter email .... ");
+            email_Id.requestFocus();
+        }
+        else if(pwd.isEmpty()) {
+            password.setError("Please enter password ... ");
+            password.requestFocus();
+        }
+        else if(pwd.length() < 6){
+            password.setError("Password must be at least six digits ... ");
+            password.requestFocus();
+        }
+        else if(!(email.isEmpty() && pwd.isEmpty())){
+            Intent intent = new Intent(MainActivity.this, Home.class);
+            intent.putExtra(PASSWORD, pwd);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"An Error Has Occurred",Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

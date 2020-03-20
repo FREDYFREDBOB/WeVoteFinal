@@ -14,14 +14,20 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
+import static com.example.wevotefinal.Vote.SELECTION;
+
 public class Thank_Vote extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
+    private int selection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thank__vote);
+
+        Intent intent = getIntent();
+        selection = intent.getIntExtra(SELECTION, 0 );
 
         {
             Toolbar toolbar = findViewById(R.id.toolbar);
@@ -42,6 +48,7 @@ public class Thank_Vote extends AppCompatActivity implements NavigationView.OnNa
 
     public void home (View view){
         Intent intentInfo = new Intent(Thank_Vote.this, Home.class);
+        intentInfo.putExtra(SELECTION, selection);
         startActivity(intentInfo);
     }
 

@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,16 +16,29 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import static com.example.wevotefinal.MainActivity.PASSWORD;
+
 public class Vote extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
     private int selection = 0;
+    private String pwd;
     public static final String SELECTION = "SELECTION";
+    public static String SHARED_PREFS = "sharedPrefs";
+    public static final String SAVED_PASS = "savedPass";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote);
+
+        loadData();
+
+        if(pwd.isEmpty()){
+            Intent pwdIntent = getIntent();
+            pwd = pwdIntent.getStringExtra(PASSWORD);
+            saveData();
+        }
 
         {
             Toolbar toolbar = findViewById(R.id.toolbar);
@@ -43,21 +57,15 @@ public class Vote extends AppCompatActivity implements NavigationView.OnNavigati
         }
     }
 
-    public void selection1(View view){
-        selection = 1;
-    }
+    public void selection1(View view){ selection = 1; }
 
-    public void selection2(View view){
-        selection = 2;
-    }
+    public void selection2(View view){ selection = 2; }
 
-    public void selection3(View view){
-        selection = 3;
-    }
+    public void selection3(View view){ selection = 3; }
 
     public void cancel (View view){
-        Intent intentInfo = new Intent(Vote.this, Home.class);
-        startActivity(intentInfo);
+        Intent intent = new Intent(Vote.this, Home.class);
+        startActivity(intent);
     }
 
     public void submit(View view){
@@ -68,8 +76,24 @@ public class Vote extends AppCompatActivity implements NavigationView.OnNavigati
         }
         else{
             intent.putExtra(SELECTION, selection);
+            intent.putExtra(PASSWORD, pwd);
             startActivity(intent);
         }
+    }
+
+    public void saveData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(SAVED_PASS, pwd);
+
+        editor.apply();
+    }
+
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+
+        pwd = sharedPreferences.getString(SAVED_PASS, "");
     }
 
     @Override

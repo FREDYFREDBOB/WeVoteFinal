@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:background="#85C1E9"
     android:fitsSystemWindows="true"
-    tools:context=".Home"
-    tools:openDrawer="start">
+    tools:context=".Home">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,23 +34,14 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.4" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
-
             <ImageView
                 android:id="@+id/info_icon"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="8dp"
-                android:background="#3F51B5"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/image_view_round_top"
                 android:onClick="viewInfo"
                 app:layout_constraintBottom_toTopOf="@+id/general_info"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/ic_information" />
 
@@ -59,58 +49,49 @@
                 android:id="@+id/general_info"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginBottom="24dp"
-                android:background="#3F51B5"
+                android:background="@drawable/text_view_round_bottom"
                 android:gravity="center"
                 android:onClick="viewInfo"
                 android:text="General Info"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/forums"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="32dp"
                 android:layout_marginBottom="24dp"
-                android:background="#3F51B5"
+                android:background="@drawable/text_view_round_bottom"
                 android:gravity="center"
                 android:onClick="viewForums"
                 android:text="Forums"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline3" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:id="@+id/forums_icon"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
-                android:background="#3F51B5"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/image_view_round_top"
                 android:onClick="viewForums"
                 app:layout_constraintBottom_toTopOf="@+id/forums"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.509"
-                app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:srcCompat="@drawable/ic_forum" />
 
             <ImageView
                 android:id="@+id/candidates_icon"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="8dp"
-                android:background="#3F51B5"
+                android:background="@drawable/image_view_round_top"
                 android:onClick="viewCandidates"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline"
                 app:srcCompat="@drawable/ic_candidates" />
@@ -119,14 +100,12 @@
                 android:id="@+id/candidates"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="8dp"
-                android:background="#3F51B5"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/text_view_round_bottom"
                 android:gravity="center"
-                android:text="Candidates"
                 android:onClick="viewCandidates"
+                android:text="Candidates"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/candidates_icon" />
 
@@ -134,13 +113,11 @@
                 android:id="@+id/vote_icon"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:background="#3F51B5"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/image_view_round_top"
                 android:onClick="startVote"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:layout_constraintTop_toTopOf="@+id/guideline"
                 app:srcCompat="@drawable/ic_vote" />
 
@@ -148,16 +125,40 @@
                 android:id="@+id/vote"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
-                android:background="#3F51B5"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/text_view_round_bottom"
                 android:gravity="center"
-                android:text="Vote"
                 android:onClick="startVote"
+                android:text="Vote"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:layout_constraintTop_toBottomOf="@+id/vote_icon" />
+
+            <ImageView
+                android:id="@+id/voted_for_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:padding="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/candidates"
+                app:srcCompat="@android:drawable/menuitem_background" />
+
+            <TextView
+                android:id="@+id/voted_for_text"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/voted_for_image"
+                app:layout_constraintTop_toBottomOf="@+id/vote" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
